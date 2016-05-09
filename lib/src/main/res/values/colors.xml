@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="pf_grey">#262626</color>
+  <color name="pf_grey_light">#999999</color>
+  <color name="pf_white">#ffffff</color>
+</resources>

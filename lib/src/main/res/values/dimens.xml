@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="spinner_height">300dp</dimen>
+  <dimen name="spinner_width">72dp</dimen>
+  <dimen name="text_size">16sp</dimen>
+
+  <dimen name="flag_size">24dp</dimen>
+
+  <dimen name="margin_large">16dp</dimen>
+  <dimen name="margin_medium">8dp</dimen>
+  <dimen name="padding_large">16dp</dimen>
+  <dimen name="padding_medium">8dp</dimen>
+</resources>

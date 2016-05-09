@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sample App</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="submit">Submit</string>
+    <string name="invalid_phone_number">Please enter a valid phone number</string>
+    <string name="valid_phone_number">Valid phone numbers!</string>
+</resources>

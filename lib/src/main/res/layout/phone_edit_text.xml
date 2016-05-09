@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/padding_large"
+    android:paddingStart="@dimen/padding_large"
+    android:paddingRight="@dimen/padding_large"
+    android:paddingEnd="@dimen/padding_large"
+    android:paddingTop="@dimen/padding_large"
+    android:gravity="center_vertical"
+    >
+
+  <Spinner
+      android:id="@+id/flag_spinner"
+      android:layout_width="@dimen/spinner_width"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_large"
+      android:dropDownWidth="@dimen/spinner_height"
+      android:popupBackground="@color/pf_white"
+      />
+
+  <EditText
+      android:id="@+id/phone_edit_text"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:inputType="phone"
+      android:textColor="@color/pf_grey"/>
+
+</LinearLayout>
