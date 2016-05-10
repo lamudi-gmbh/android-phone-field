@@ -67,10 +67,14 @@ public abstract class PhoneField extends LinearLayout {
   @Override
   protected void onFinishInflate() {
     super.onFinishInflate();
-    final CountriesAdapter adapter = new CountriesAdapter(getContext(), Countries.COUNTRIES);
     mSpinner = (Spinner) findViewById(R.id.flag_spinner);
     mEditText = (EditText) findViewById(R.id.phone_edit_text);
 
+    if (mSpinner == null || mEditText == null) {
+      throw new IllegalStateException("Please provide a valid xml layout");
+    }
+
+    final CountriesAdapter adapter = new CountriesAdapter(getContext(), Countries.COUNTRIES);
     mSpinner.setOnTouchListener(new OnTouchListener() {
       @Override
       public boolean onTouch(View v, MotionEvent event) {

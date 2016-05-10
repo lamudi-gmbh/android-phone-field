@@ -1,0 +1,16 @@
+{
+  "name": "countries-generator",
+  "version": "1.0.0",
+  "description": "script to generate java file",
+  "main": "gen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^0.26.4",
+    "lodash": ">= 0.0.1",
+    "underscore.string": ">= 0.0.1"
+  }
+}
