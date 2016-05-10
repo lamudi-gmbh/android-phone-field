@@ -17,3 +17,5 @@
 #}
 
 -keep class com.lamudi.phonefield.** { *; }
+-keep class com.google.i18n.** { *; }
+-keep interface com.google.i18n.** { *; }

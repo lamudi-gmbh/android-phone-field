@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+
+
+
+ext {
+  bintrayRepo = 'maven'
+  bintrayName = 'phone-field'
+
+  publishedGroupId = 'com.lamudi.phonefield'
+  libraryName = 'phone-field'
+  artifact = 'phone-field'
+
+  libraryDescription = 'A small library that allows you to create phone fields with corresponding country flags, and validate the phone number using libphonenumber from google.'
+
+  siteUrl = 'https://github.com/ialmetwally/AndroidPhoneField'
+  gitUrl = 'https://github.com/ialmetwally/AndroidPhoneField.git'
+
+  libraryVersion = '0.0.1'
+
+  developerId = 'ialmetwally'
+  developerName = 'Ismail Almetwally'
+  developerEmail = 'ismail.almetwally@gmail.com'
+
+  licenseName = 'The Apache Software License, Version 2.0'
+  licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+  allLicenses = ["Apache-2.0"]
+}
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion "23.0.2"
+
+  defaultConfig {
+    minSdkVersion 14
+    targetSdkVersion 23
+    versionCode 1
+    versionName "0.0.1"
+  }
+  buildTypes {
+    release {
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:appcompat-v7:23.3.0'
+  compile 'com.googlecode.libphonenumber:libphonenumber:7.3.1'
+  compile 'com.android.support:design:23.3.0'
+}
+
+apply from : '../installv1.gradle'
+apply from : '../bintrayv1.gradle'
