@@ -20,19 +20,12 @@ The library has two different fields:
  
 ## Usage
 
-In your project's gradle file add the following repository 
-```gradle
-allprojects {
-  repositories {
-    maven { url  "http://dl.bintray.com/ialmetwally/maven" }
-  }
-}
-```
-
 In your module's gradle file add the following dependency
 
-```gradle
-compile 'com.lamudi.phonefield:phone-field:0.0.2@aar'
+```
+compile ('com.lamudi.phonefield:phone-field:0.0.5@aar') {
+    transitive = true
+}
 ```
 
  In your layout you can use the PhoneInputLayout 
