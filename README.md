@@ -121,6 +121,14 @@ or
 ./gen.js
 ```
 
+## Motivation
+
+This is probably not the the first library with the same purpose, for instance before I started working on the library I came across [IntlPhoneInput](https://github.com/Rimoto/IntlPhoneInput) which provides almost most of the functionality this library provides, however I chose to develop a new library for the following reasons: 
+ 
+ * This library provides two implementations of PhoneField using EditText and TextInputLayout
+ * This library allows users to extend the functionality and use custom layouts if needed to match the application theme
+ * This library uses a static list of countries generated from the countries.json file in the raw resources 
+
 ## Attributions  
 
  1. Inspired by [intl-tel-input for jQuery](https://github.com/jackocnr/intl-tel-input) and [IntlPhoneInput](https://github.com/Rimoto/IntlPhoneInput)
