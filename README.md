@@ -3,7 +3,7 @@ android-phone-field
 
 AndroidPhoneField is A small UI library that allows you to create phone fields with corresponding country flags, and validate the phone number using [libphonenumber](https://github.com/googlei18n/libphonenumber) from google.
 
-![alt text](https://raw.githubusercontent.com/ialmetwally/AndroidPhoneField/master/raw/phone-field.gif "Sample App")
+![alt text](https://raw.githubusercontent.com/lamudi-gmbh/android-phone-field/master/raw/phone-field.gif "Sample App")
 
 The library has two different fields:
 
