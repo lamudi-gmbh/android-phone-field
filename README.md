@@ -20,7 +20,7 @@ The library has two different fields:
  
 ## Usage
 
-In your module's gradle file add the following dependency
+In your module's gradle file add the following dependency, please make sure that you have jcenter in your repositories list
 
 ```
 compile ('com.lamudi.phonefield:phone-field:0.0.6@aar') {
