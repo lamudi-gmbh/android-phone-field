@@ -4,10 +4,6 @@
     android:layout_height="wrap_content"
     android:gravity="top"
     android:orientation="horizontal"
-    android:paddingLeft="@dimen/padding_large"
-    android:paddingStart="@dimen/padding_large"
-    android:paddingRight="@dimen/padding_large"
-    android:paddingEnd="@dimen/padding_large"
     >
 
   <Spinner
