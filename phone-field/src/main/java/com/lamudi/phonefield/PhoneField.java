@@ -83,9 +83,10 @@ public abstract class PhoneField extends LinearLayout {
       }
     });
 
-    mEditText.addTextChangedListener(new TextWatcher() {
+    final TextWatcher textWatcher = new TextWatcher() {
       @Override
       public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
       }
 
       @Override
@@ -98,6 +99,13 @@ public abstract class PhoneField extends LinearLayout {
         if (rawNumber.isEmpty()) {
           mSpinner.setSelection(mDefaultCountryPosition);
         } else {
+          if (rawNumber.startsWith("00")) {
+            rawNumber = rawNumber.replaceFirst("00", "+");
+            mEditText.removeTextChangedListener(this);
+            mEditText.setText(rawNumber);
+            mEditText.addTextChangedListener(this);
+            mEditText.setSelection(rawNumber.length());
+          }
           try {
             Phonenumber.PhoneNumber number = parsePhoneNumber(rawNumber);
             if (mCountry == null || mCountry.getDialCode() != number.getCountryCode()) {
@@ -107,7 +115,9 @@ public abstract class PhoneField extends LinearLayout {
           }
         }
       }
-    });
+    };
+
+    mEditText.addTextChangedListener(textWatcher);
 
     mSpinner.setAdapter(adapter);
     mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
