@@ -42,6 +42,11 @@ public class PhoneInputLayout extends PhoneField {
 
   @Override
   public void setError(String error) {
+    if (error == null || error.length() == 0) {
+      mTextInputLayout.setErrorEnabled(false);
+    } else {
+      mTextInputLayout.setErrorEnabled(true);
+    }
     mTextInputLayout.setError(error);
   }
 
