@@ -98,7 +98,7 @@ button.setOnClickListener(new View.OnClickListener() {
 
 ## Customization
 
-In case the default style doesn't match your app styles, you can extend the PhoneInputLayout, or PhoneEditText and provide your own xml, but keep in mind that you have to provide a valid xml file with at least an EditText (id = phone_edit_text) and Spinner (id = flag_spinner), otherwise the library will throw an IllegalStateException.
+In case the default style doesn't match your app styles, you can extend the PhoneInputLayout, or PhoneEditText and provide your own xml, but keep in mind that you have to provide a valid xml file with at least an EditText (tag = com_lamudi_phonefield_edittext) and Spinner (id = com_lamudi_phonefield_flag_spinner), otherwise the library will throw an IllegalStateException.
 
 You can also create your own custom view by extending the PhoneField directly. 
 
