@@ -27,7 +27,7 @@ public class PhoneInputLayout extends PhoneField {
   @Override
   protected void onFinishInflate() {
     super.onFinishInflate();
-    mTextInputLayout = (TextInputLayout) findViewById(R.id.til_phone);
+    mTextInputLayout = (TextInputLayout) findViewWithTag(getResources().getString(R.string.com_lamudi_phonefield_til_phone));
   }
 
   @Override

@@ -8,7 +8,7 @@
     >
 
   <Spinner
-      android:id="@+id/flag_spinner"
+      android:tag="@string/com_lamudi_phonefield_flag_spinner"
       android:layout_width="@dimen/spinner_width"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/margin_large"
@@ -17,7 +17,7 @@
       />
 
   <EditText
-      android:id="@+id/phone_edit_text"
+      android:tag="@string/com_lamudi_phonefield_edittext"
       android:layout_width="0dp"
       android:layout_height="match_parent"
       android:layout_weight="1"

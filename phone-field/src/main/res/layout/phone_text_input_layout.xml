@@ -7,7 +7,7 @@
     >
 
   <Spinner
-      android:id="@+id/flag_spinner"
+      android:tag="@string/com_lamudi_phonefield_flag_spinner"
       android:layout_width="@dimen/spinner_width"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/margin_large"
@@ -16,14 +16,14 @@
       />
 
   <android.support.design.widget.TextInputLayout
-      android:id="@+id/til_phone"
+      android:tag="@string/com_lamudi_phonefield_til_phone"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_weight="1"
       >
 
-    <EditText
-        android:id="@+id/phone_edit_text"
+    <android.support.design.widget.TextInputEditText
+        android:tag="@string/com_lamudi_phonefield_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
