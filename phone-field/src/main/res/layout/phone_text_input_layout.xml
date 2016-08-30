@@ -1,37 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="top"
-    android:orientation="horizontal"
-    >
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
 
   <Spinner
-      android:tag="@string/com_lamudi_phonefield_flag_spinner"
       android:layout_width="@dimen/spinner_width"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/margin_large"
       android:dropDownWidth="@dimen/spinner_height"
       android:popupBackground="@color/pf_white"
+      android:tag="@string/com_lamudi_phonefield_flag_spinner"
       />
 
   <android.support.design.widget.TextInputLayout
-      android:tag="@string/com_lamudi_phonefield_til_phone"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_weight="1"
+      android:tag="@string/com_lamudi_phonefield_til_phone"
       >
 
     <android.support.design.widget.TextInputEditText
-        android:tag="@string/com_lamudi_phonefield_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone"
+        android:tag="@string/com_lamudi_phonefield_edittext"
         android:textColor="@color/pf_grey"
         android:textSize="@dimen/text_size"
         />
-
   </android.support.design.widget.TextInputLayout>
 
-
-</LinearLayout>
+</merge>

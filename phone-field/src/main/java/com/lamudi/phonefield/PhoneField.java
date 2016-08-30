@@ -62,11 +62,14 @@ public abstract class PhoneField extends LinearLayout {
   public PhoneField(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
     inflate(getContext(), getLayoutResId(), this);
+    updateLayoutAttributes();
+    prepareView();
   }
 
-  @Override
-  protected void onFinishInflate() {
-    super.onFinishInflate();
+  /**
+   * Prepare view.
+   */
+  protected void prepareView() {
     mSpinner = (Spinner) findViewWithTag(getResources().getString(R.string.com_lamudi_phonefield_flag_spinner));
     mEditText = (EditText) findViewWithTag(getResources().getString(R.string.com_lamudi_phonefield_edittext));
 
@@ -131,6 +134,7 @@ public abstract class PhoneField extends LinearLayout {
         mCountry = null;
       }
     });
+
   }
 
   /**
@@ -229,6 +233,11 @@ public abstract class PhoneField extends LinearLayout {
     ((InputMethodManager) getContext().getSystemService(
         Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
   }
+
+  /**
+   * Update layout attributes.
+   */
+  protected abstract void updateLayoutAttributes();
 
   /**
    * Gets layout res id.
