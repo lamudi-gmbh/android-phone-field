@@ -23,7 +23,7 @@ The library has two different fields:
 In your module's gradle file add the following dependency, please make sure that you have jcenter in your repositories list
 
 ```
-compile ('com.lamudi.phonefield:phone-field:0.1.1@aar') {
+compile ('com.lamudi.phonefield:phone-field:0.1.3@aar') {
     transitive = true
 }
 ```
