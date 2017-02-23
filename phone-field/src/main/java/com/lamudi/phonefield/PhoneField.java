@@ -33,6 +33,8 @@ public abstract class PhoneField extends LinearLayout {
 
   private int mDefaultCountryPosition = 0;
 
+  private TextWatcher originalTextWatcher;
+
   /**
    * Instantiates a new Phone field.
    *
@@ -86,7 +88,7 @@ public abstract class PhoneField extends LinearLayout {
       }
     });
 
-    final TextWatcher textWatcher = new TextWatcher() {
+    originalTextWatcher = new TextWatcher() {
       @Override
       public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -120,7 +122,7 @@ public abstract class PhoneField extends LinearLayout {
       }
     };
 
-    mEditText.addTextChangedListener(textWatcher);
+    mEditText.addTextChangedListener(originalTextWatcher);
 
     mSpinner.setAdapter(adapter);
     mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -135,6 +137,13 @@ public abstract class PhoneField extends LinearLayout {
       }
     });
 
+  }
+
+  public void addTextChangedListener(TextWatcher textWatcher, boolean removeOriginal) {
+    mEditText.addTextChangedListener(textWatcher);
+    if (removeOriginal) {
+      mEditText.removeTextChangedListener(originalTextWatcher);
+    }
   }
 
   /**
