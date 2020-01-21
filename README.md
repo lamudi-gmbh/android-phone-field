@@ -125,6 +125,6 @@ This is probably not the the first library with the same purpose, for instance b
 ## Attributions  
 
  1. Inspired by [intl-tel-input for jQuery](https://github.com/jackocnr/intl-tel-input) and [IntlPhoneInput](https://github.com/Rimoto/IntlPhoneInput)
- 2. Flag images from [flags](https://www.gosquared.com/resources/flag-icons/)
+ 2. Flag images from [GoSquared](https://www.gosquared.com/resources/flag-icons/)
  3. Original country data from mledoze's [World countries in JSON, CSV and XML](https://github.com/mledoze/countries) which is then used to generate a plain Java file
  4. Formatting/validation using [libphonenumber](https://github.com/googlei18n/libphonenumber)
