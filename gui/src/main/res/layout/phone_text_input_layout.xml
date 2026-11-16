@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="0dp"
+      android:background="@color/color_background">
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/spinner_height"
+        android:layout_weight="1"
+        android:tag="@string/tech_zekon_guiComponents_phonefield_til_phone"
+        android:textColorHint="@color/hint_text"
+        app:boxStrokeColor="#E11515">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/spinner_height"
+          android:inputType="phone"
+          android:tag="@string/tech_zekon_guiComponents_phonefield_edittext"
+          android:textColor="@color/color_text"
+          android:backgroundTint="@color/hint_text"
+          android:textSize="@dimen/text_size" />
+    </com.google.android.material.textfield.TextInputLayout>
+  </LinearLayout>
+</merge>

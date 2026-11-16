@@ -1,1 +1,1 @@
-include ':phone-field', ':sample'
+include ':gui'

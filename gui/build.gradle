@@ -1,0 +1,35 @@
+plugins {
+  id 'com.android.library'
+}
+
+android {
+  namespace = 'tech.zekon.gui'
+
+  defaultConfig {
+    minSdk 28
+    targetSdk 37
+    consumerProguardFiles "consumer-rules.pro"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  compileSdk {
+    version = release(37) { minorApiLevel = 2 }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+}
+
+dependencies {
+  api 'com.googlecode.libphonenumber:libphonenumber:9.0.43'
+  api 'com.google.android.material:material:1.14.0'
+  implementation 'androidx.core:core:1.19.1'
+  implementation 'com.google.android.play:core-common:2.0.4'
+  implementation 'com.google.android.play:review:2.0.2'
+}

@@ -1,6 +1,0 @@
-<resources>
-  <string name="app_name">PhoneField</string>
-  <string name="com_lamudi_phonefield_edittext">phone_edit_text</string>
-  <string name="com_lamudi_phonefield_flag_spinner">flag_spinner</string>
-  <string name="com_lamudi_phonefield_til_phone">til_phone</string>
-</resources>

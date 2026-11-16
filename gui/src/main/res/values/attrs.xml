@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <declare-styleable name="FractionButton">
+        <attr name="isCheckbox" format="boolean"/>
+        <attr name="showHelpButton" format="boolean"/>
+        <attr name="Checked" format="boolean"/>
+        <attr name="android:text"/>
+        <attr name="Numerator" format="string"/>
+        <attr name="Denominator" format="string"/>
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+        <attr name="overlapPercent" format="integer"/>
+        <attr name="checkedColor" format="color"/>
+    </declare-styleable>
+</resources>
