@@ -17,7 +17,9 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
-  compileSdk = 37
+  compileSdk {
+    version = release(37) { minorApiLevel = 2 }
+  }
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_17
     targetCompatibility JavaVersion.VERSION_17
@@ -25,9 +27,9 @@ android {
 }
 
 dependencies {
-  api 'com.googlecode.libphonenumber:libphonenumber:9.0.31'
+  api 'com.googlecode.libphonenumber:libphonenumber:9.0.43'
   api 'com.google.android.material:material:1.14.0'
-  implementation 'androidx.core:core:1.18.0'
+  implementation 'androidx.core:core:1.19.1'
   implementation 'com.google.android.play:core-common:2.0.4'
   implementation 'com.google.android.play:review:2.0.2'
 }

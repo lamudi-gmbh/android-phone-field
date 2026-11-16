@@ -27,7 +27,7 @@ public class Country {
   }
 
   public String getDisplayName() {
-    return new Locale("", mCode).getDisplayCountry(Locale.US);
+    return new Locale.Builder().setRegion(mCode).build().getDisplayCountry(Locale.US);
   }
 
   public int getResId(Context context) {

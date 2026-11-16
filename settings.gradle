@@ -1,1 +1,1 @@
-include ':gui', ':sample'
+include ':gui'

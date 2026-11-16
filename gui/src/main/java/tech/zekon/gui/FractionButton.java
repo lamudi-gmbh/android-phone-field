@@ -7,6 +7,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
@@ -244,15 +245,15 @@ public class FractionButton  extends ConstraintLayout implements View.OnClickLis
         isChecked = checked;
         try {
             getBackground().setColorFilter(null);
-            button.getBackground().setColorFilter(Color.rgb(10, 10, 10), PorterDuff.Mode.ADD);
+            button.getBackground().setColorFilter(new PorterDuffColorFilter(Color.rgb(10, 10, 10), PorterDuff.Mode.ADD));
         } catch (Exception ignored) {}
         if (!isCheckbox) return;
         CheckBox c = findViewWithTag(getResources().getString(R.string.tech_zekon_guiComponents_FractionButton_checkbox));
         c.setChecked(isChecked);
         try {
             if (isChecked) {
-                getBackground().setColorFilter(checkedColor, PorterDuff.Mode.SRC);
-                button.getBackground().setColorFilter(checkedColor, PorterDuff.Mode.SRC);
+                getBackground().setColorFilter(new PorterDuffColorFilter(checkedColor, PorterDuff.Mode.SRC));
+                button.getBackground().setColorFilter(new PorterDuffColorFilter(checkedColor, PorterDuff.Mode.SRC));
             }
         } catch (Exception ignored) {}
     }

@@ -4,24 +4,21 @@ macOS (Apple Silicon or Intel) command-line build setup — **no Android Studio 
 
 **What this is:** home of the shared **`:gui`** widget library (e.g. `FractionButton`, `AppRate`) that
 Real-Piano-Keyboard, Real-Ear-Training and Real-Music-Dictations consume by relative path
-(`../guiComponents/gui`), plus a **`:sample`** demo app. Self-contained — no external sibling modules.
+(`../guiComponents/gui`). Self-contained — no external sibling modules.
 
 | Gradle module | compileSdk | Role |
 |---------------|------------|------|
-| `:gui`        | **37**     | shared widget library (consumed by the three Real-* apps) |
-| `:sample`     | **36**     | demo app exercising the widgets |
+| `:gui`        | **37.2**   | shared widget library (consumed by the three Real-* apps) |
 
-> ⚠️ This repo currently **spans two platforms** (`:gui` on 37, `:sample` on 36), so install **both** below.
-
-## Toolchain (2026-06-01)
+## Toolchain (2026-11-16)
 
 | Tool | Version | Notes |
 |------|---------|-------|
-| JDK (runs Gradle) | **21** (Temurin) | 17 also OK. **JDK 25 fails** — Gradle 9.5.1 supports ≤ JDK 23. |
-| Gradle | 9.5.1 | via `./gradlew`; nothing to install |
-| Android Gradle Plugin | 9.2.1 | builds compileSdk 37 with no warning |
-| Platforms | `android-36` **and** `android-37.0` | API 37 uses *minor-version* packaging |
-| Build-tools | 36.0.0 + 37.0.0 | |
+| JDK (runs Gradle) | **21** (Temurin) | 17 and 25 also OK (25 checked on Gradle 9.9.1, 2026-11-16). |
+| Gradle | 9.9.1 | via `./gradlew`; nothing to install |
+| Android Gradle Plugin | 9.5.1 | builds compileSdk 37.2 with no warning |
+| Platform | `android-37.2` | API 37 uses *minor-version* packaging |
+| Build-tools | 36.0.0 | the plugin's default |
 | Java source/target | 17 | |
 
 ## 1 — JDK 21
@@ -55,8 +52,8 @@ mv cmdline-tools "$ANDROID_HOME/cmdline-tools/latest"
 (Persist the two `export` lines in `~/.zshrc`. Alternatively `brew install --cask android-commandlinetools`,
 but then point `ANDROID_HOME` at its Homebrew prefix instead.)
 
-### ⚠️ API 37 = `android-37.0` (minor-version packaging)
-The platform package is **`platforms;android-37.0`**, *not* `platforms;android-37` — the latter fails with
+### ⚠️ API 37 = `android-37.2` (minor-version packaging)
+The platform package is **`platforms;android-37.2`**, *not* `platforms;android-37` — the latter fails with
 *"Failed to find package."* Older `cmdline-tools` can't even list it. If `sdkmanager --list | grep android-37`
 comes back empty, update the tools first:
 ```bash
@@ -66,25 +63,21 @@ rm -rf "$ANDROID_HOME/cmdline-tools/latest" && mv "$ANDROID_HOME/cmdline-tools/l
 ```
 (The `SDK XML version 3` warning sdkmanager prints is harmless.)
 
-## 3 — SDK packages (both platforms — see note above)
+## 3 — SDK packages
 ```bash
 yes | sdkmanager --licenses
-sdkmanager "platform-tools" \
-  "platforms;android-37.0" "build-tools;37.0.0" \
-  "platforms;android-36"   "build-tools;36.0.0"
+sdkmanager "platform-tools" "platforms;android-37.2" "build-tools;36.0.0"
 ```
 
 ## 4 — Build
 ```bash
 chmod +x gradlew                            # exec bit is often lost on checkout (or run: sh gradlew …)
 ./gradlew :gui:assembleDebug                # just the shared widget library (.aar)
-./gradlew :sample:assembleDebug             # the demo app → sample/build/outputs/apk/debug/
 ```
-Signing config (if any) is in `sample/build.gradle`.
 
 ## Troubleshooting
-- **`Failed to find package platforms;android-37`** → use `android-37.0`, and update cmdline-tools (§2).
-- **Gradle dies under JDK 25** (`Unsupported class file major version`, toolchain errors) → point `JAVA_HOME` at JDK 17–21.
+- **`Failed to find package platforms;android-37`** → use `android-37.2`, and update cmdline-tools (§2).
+- **Gradle dies under an unsupported JDK** (`Unsupported class file major version`, toolchain errors) → point `JAVA_HOME` at JDK 17–25.
 - **`./gradlew: Permission denied`** → `chmod +x gradlew`, or run `sh gradlew …`.
 - **SSL / `PKIX` / handshake errors from sdkmanager or Gradle** (corporate proxy) → import the proxy's root CA into the JDK that runs the build:
   ```bash
